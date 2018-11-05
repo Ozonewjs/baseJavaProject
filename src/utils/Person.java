@@ -1,6 +1,5 @@
 package utils;
 
-import java.util.Comparator;
 import java.util.TreeSet;
 
 /**
@@ -16,18 +15,27 @@ public class Person {
         return "Person [age=" + age + "]";
     }
     public static void main(String[] args) {
-        TreeSet<Person> persons = new TreeSet<>(new Comparator<Person>(){
-            @Override
-            public int compare(Person o1, Person o2) {
-                if(o1.age > o2.age){
-                    return -1;
-                }else if(o1.age == o2.age) {
-                    return 0;
-                } else{
-                    return 1;
-                }
+        TreeSet<Person> persons = new TreeSet<>((Person o1, Person o2)->{
+            if(o1.age > o2.age){
+                return -1;
+            }else if(o1.age == o2.age) {
+                return 0;
+            } else{
+                return 1;
             }
         });
+//        TreeSet<Person> persons = new TreeSet<>(new Comparator<Person>(){
+//            @Override
+//            public int compare(Person o1, Person o2) {
+//                if(o1.age > o2.age){
+//                    return -1;
+//                }else if(o1.age == o2.age) {
+//                    return 0;
+//                } else{
+//                    return 1;
+//                }
+//            }
+//        });
 
         persons.add(new Person(2));
         persons.add(new Person(5));
