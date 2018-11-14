@@ -5,13 +5,13 @@ package utils.SingletonPattern;
  */
 public class SingletonSynchronized {
     private static SingletonSynchronized instance;
-    public static synchronized SingletonSynchronized getInstance(){
+    private static synchronized SingletonSynchronized getInstance(){
         if (instance == null) {
             instance = new SingletonSynchronized();
         }
         return  instance;
     }
-    public void showMessage(){
+    private void showMessage(){
         System.out.println("Hello World!");
     }
     public static void main(String[] args) {
