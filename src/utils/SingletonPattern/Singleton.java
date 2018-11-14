@@ -5,13 +5,13 @@ package utils.SingletonPattern;
  */
 public class Singleton {
     private static Singleton instance;
-    public static Singleton getInstance(){
+    private static Singleton getInstance(){
         if (instance == null) {
             instance = new Singleton();
         }
         return instance;
     }
-    public void showMessage(){
+    private void showMessage(){
         System.out.println("Hello World!");
     }
     public static void main(String[] args) {
