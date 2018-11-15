@@ -6,7 +6,7 @@ public class TestSeriali  implements Serializable {
 
         private String name;
 
-        private Integer age;
+        transient  private Integer age;//当某个字段被声明为transient后，默认序列化机制就会忽略该字段
 
         private String gender;
 
