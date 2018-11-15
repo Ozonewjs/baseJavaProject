@@ -5,6 +5,7 @@ package utils.SingletonPattern;
  */
 public class SingletonDCL {
     private volatile static SingletonDCL instance;
+    private SingletonDCL(){}
     private static SingletonDCL getInstance(){
         if (instance == null) {
             synchronized (SingletonDCL.class){

@@ -5,6 +5,7 @@ package utils.SingletonPattern;
  */
 public class SingletonSynchronized {
     private static SingletonSynchronized instance;
+    private SingletonSynchronized (){}
     private static synchronized SingletonSynchronized getInstance(){
         if (instance == null) {
             instance = new SingletonSynchronized();
