@@ -36,8 +36,8 @@ public class MineStreamTest {
      * 迭代  forEach
      */
     public void testForEach() {
-        strList.stream().forEach(System.out::println);
-        strList.stream().forEach(e->System.out.print(e));
+        strList.forEach(System.out::println);
+        strList.forEach(e->System.out.print(e));
         System.out.println();
         strList.forEach(System.out::print);
     }
@@ -50,8 +50,18 @@ public class MineStreamTest {
         System.out.println(list);
     }
     public static void main(String[] args) {
-        Integer[] sixNums = {1, 2, 3, 4, 5, 6};
-        Integer[] evens = Stream.of(sixNums).filter(n -> n%2 == 0).toArray(Integer[]::new);
-        System.out.println(Arrays.toString(evens));
+//        Integer[] sixNums = {1, 2, 3, 4, 5, 6};
+//        Integer[] evens = Stream.of(sixNums).filter(n -> n%2 == 0).toArray(Integer[]::new);
+//        System.out.println(Arrays.toString(evens));
+//        String[] arr = new String[]{"yes", "YES", "no", "NO"};
+//        Arrays.stream(arr).map(x -> x.toLowerCase()).forEach(System.out::println);
+//        Integer[] arr1 = new Integer[]{1,2,3,4,5,6,7,8,9,10};
+//        Arrays.stream(arr1).filter(x->x>3&&x<8).forEach(System.out::println);
+        String[] arrflat1 = {"a", "b", "c", "d"};
+        String[] arrflat2 = {"e", "f", "c", "d"};
+        String[] arrflat3 = {"h", "j", "c", "d"};
+        // Stream.of(arr1, arr2, arr3).flatMap(x -> Arrays.stream(x)).forEach(System.out::println);
+        // flapMap：拆解流，将流中每一个元素拆解成一个流
+        Stream.of(arrflat1, arrflat2, arrflat3).flatMap(Arrays::stream).forEach(System.out::println);
     }
 }
