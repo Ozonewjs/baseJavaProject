@@ -1,16 +1,16 @@
-package utils.SingletonPattern;
+package utils.designmode.singletonpattern;
 
 /**
- * @author ozone 懒汉式，线程安全
+ * @author ozone 懒汉式，线程不安全
  */
-public class SingletonSynchronized {
-    private static SingletonSynchronized instance;
-    private SingletonSynchronized (){}
-    private static synchronized SingletonSynchronized getInstance(){
+public class Singleton {
+    private static Singleton instance;
+    private Singleton (){}
+    private static Singleton getInstance(){
         if (instance == null) {
-            instance = new SingletonSynchronized();
+            instance = new Singleton();
         }
-        return  instance;
+        return instance;
     }
     private void showMessage(){
         System.out.println("Hello World!");
@@ -22,7 +22,7 @@ public class SingletonSynchronized {
         //SingleObject object = new SingleObject();
 
         //获取唯一可用的对象
-        SingletonSynchronized object = SingletonSynchronized.getInstance();
+        Singleton object = Singleton.getInstance();
         object.showMessage();
         //显示消息
 //        object.showMessage();

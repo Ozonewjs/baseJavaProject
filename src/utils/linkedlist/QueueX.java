@@ -1,4 +1,4 @@
-package utils.LinkedList;
+package utils.linkedlist;
 
 public class QueueX {
     private final int SIZE = 20;

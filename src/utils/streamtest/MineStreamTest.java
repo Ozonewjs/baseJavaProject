@@ -63,5 +63,24 @@ public class MineStreamTest {
         // Stream.of(arr1, arr2, arr3).flatMap(x -> Arrays.stream(x)).forEach(System.out::println);
         // flapMap：拆解流，将流中每一个元素拆解成一个流
         Stream.of(arrflat1, arrflat2, arrflat3).flatMap(Arrays::stream).forEach(System.out::println);
+        String a = "A";
+        String aa = "A";
+        String b = new String("B");
+        String bb = new String("B");
+        if(a == aa){
+            System.out.println("a==aa");
+        }else{
+            System.out.println("a!=aa");
+        }
+        if(b == bb){
+            System.out.println("b == bb");
+        }else{
+            System.out.println("b!=bb");
+        }
+        if(b.equals(bb)){
+            System.out.println("b.equlas(bb); ");
+        }else{
+            System.out.println("!b.equlas(bb)");
+        }
     }
 }

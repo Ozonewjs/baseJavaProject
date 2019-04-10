@@ -1,4 +1,4 @@
-package utils.SingletonPattern;
+package utils.designmode.singletonpattern;
 
 /**
  * @author ozone 单例枚举类实现

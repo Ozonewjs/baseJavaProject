@@ -1,4 +1,4 @@
-package utils.LinkedList;
+package utils.linkedlist;
 
 public class SingleLinkedList {
         private int size;//链表节点的个数

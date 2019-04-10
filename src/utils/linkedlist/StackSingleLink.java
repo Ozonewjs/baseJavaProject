@@ -1,4 +1,4 @@
-package utils.LinkedList;
+package utils.linkedlist;
 
 public class StackSingleLink {
     private SingleLinkedList link;

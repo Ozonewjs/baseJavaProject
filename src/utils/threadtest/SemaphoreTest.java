@@ -1,4 +1,4 @@
-package utils.ThreadTest;
+package utils.threadtest;
 
 import java.util.concurrent.Semaphore;
 
@@ -7,7 +7,7 @@ public class SemaphoreTest {
 
         int N = 8;            //工人数
 
-        Semaphore semaphore = new Semaphore(5); //机器数目
+        Semaphore semaphore = new Semaphore(1); //机器数目
 
         for(int i=0;i<N;i++)
 

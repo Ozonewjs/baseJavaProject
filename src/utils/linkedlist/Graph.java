@@ -1,4 +1,4 @@
-package utils.LinkedList;
+package utils.linkedlist;
 
 public class Graph {
     private final int MAX_VERTS = 20;//表示顶点的个数

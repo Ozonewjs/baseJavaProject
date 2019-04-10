@@ -1,4 +1,4 @@
-package utils.SingletonPattern;
+package utils.designmode.singletonpattern;
 
 /**
  * @author ozone
@@ -32,5 +32,8 @@ public class Hello {
         }
         SingletonDemo instance = SingletonDemo.INSTANCE;
         instance.otherMethods();
+        Integer f1 = 100, f2 = 100, f3 = 150, f4 = 150;
+        System.out.println(f1 == f2);
+        System.out.println(f3 == f4);
     }
 }

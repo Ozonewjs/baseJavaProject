@@ -1,4 +1,4 @@
-package utils.ThreadTest;
+package utils.threadtest;
 
 import java.util.concurrent.CountDownLatch;
 

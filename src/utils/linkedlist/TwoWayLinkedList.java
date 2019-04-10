@@ -1,4 +1,4 @@
-package utils.LinkedList;
+package utils.linkedlist;
 
 public class TwoWayLinkedList {
     private Node head;//表示链表头

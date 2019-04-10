@@ -1,4 +1,4 @@
-package utils.SingletonPattern;
+package utils.designmode.singletonpattern;
 
 /**
  * @author ozone 测试volatile关键字

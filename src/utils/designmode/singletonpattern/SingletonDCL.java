@@ -1,14 +1,16 @@
-package utils.SingletonPattern;
+package utils.designmode.singletonpattern;
 
 /**
- * @author ozone 懒汉式，线程不安全
+ * @author ozone 双检锁/双重校验锁
  */
-public class Singleton {
-    private static Singleton instance;
-    private Singleton (){}
-    private static Singleton getInstance(){
+public class SingletonDCL {
+    private volatile static SingletonDCL instance;
+    private SingletonDCL(){}
+    private static SingletonDCL getInstance(){
         if (instance == null) {
-            instance = new Singleton();
+            synchronized (SingletonDCL.class){
+                instance = new SingletonDCL();
+            }
         }
         return instance;
     }
@@ -22,7 +24,7 @@ public class Singleton {
         //SingleObject object = new SingleObject();
 
         //获取唯一可用的对象
-        Singleton object = Singleton.getInstance();
+        SingletonDCL object = SingletonDCL.getInstance();
         object.showMessage();
         //显示消息
 //        object.showMessage();
