@@ -38,10 +38,10 @@ public class SemaphoreTest {
 
                 System.out.println("工人"+this.num+"释放出机器");
 
-                semaphore.release();
-
             } catch (InterruptedException e) {
                 e.printStackTrace();
+            }finally {
+                semaphore.release();
             }
         }
     }
