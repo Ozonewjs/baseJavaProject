@@ -1,6 +1,9 @@
 package utils.threadtest;
 import java.util.concurrent.*;
 
+/**
+ * 获取线程返回结果
+ */
 public class CallableDemo {
 
     static class SumTask implements Callable<Long> {
