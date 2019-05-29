@@ -5,8 +5,8 @@ import java.io.*;
 public class TestSeriali  implements Serializable {
 
         private String name;
-
-        transient  private Integer age;//当某个字段被声明为transient后，默认序列化机制就会忽略该字段
+        /** 当某个字段被声明为transient后，默认序列化机制就会忽略该字段**/
+        transient  private Integer age;
 
         private String gender;
 
@@ -35,7 +35,8 @@ public class TestSeriali  implements Serializable {
 
         ObjectInputStream oin = new ObjectInputStream(new FileInputStream(file));
         // 重新读取被保存的Person对象时，并没有调用Person的任何构造器，看起来就像是直接使用字节将Person对象还原出来的
-        Object newPerson = oin.readObject(); // 没有强制转换到Person类型
+        // 没有强制转换到Person类型
+        Object newPerson = oin.readObject();
         oin.close();
         System.out.println(newPerson);
     }
