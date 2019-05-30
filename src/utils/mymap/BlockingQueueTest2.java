@@ -5,12 +5,13 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.LinkedBlockingQueue;
 
-/**
- * 多线程模拟实现生产者／消费者模型
- *
- * @author 林计钦
- * @version 1.0 2013-7-25 下午05:23:11
- */
+ /**
+ * @ClassName Test1
+ * @Author Ozone
+ * @Description 多线程模拟实现生产者／消费者模型
+ * @Date 2019/5/29 16:03
+ * @Version 1.0
+ **/
 public class BlockingQueueTest2 {
     /**
      *
@@ -18,16 +19,16 @@ public class BlockingQueueTest2 {
      *
      */
     public class Basket {
-        // 篮子，能够容纳3个苹果
+        /** 篮子，能够容纳3个苹果 **/
         BlockingQueue<String> basket = new LinkedBlockingQueue<>(3);
 
-        // 生产苹果，放入篮子
+        /** 生产苹果，放入篮子 **/
         public void produce() throws InterruptedException {
             // put方法放入一个苹果，若basket满了，等到basket有位置
             basket.put("An apple");
         }
 
-        // 消费苹果，从篮子中取走
+        /** 消费苹果，从篮子中取走 **/
         public String consume() throws InterruptedException {
             // take方法取出一个苹果，若basket为空，等到basket有苹果为止(获取并移除此队列的头部)
             return basket.take();
@@ -43,7 +44,7 @@ public class BlockingQueueTest2 {
             this.instance = instance;
             this.basket = basket;
         }
-
+        @Override
         public void run() {
             try {
                 while (true) {
@@ -69,7 +70,7 @@ public class BlockingQueueTest2 {
             this.instance = instance;
             this.basket = basket;
         }
-
+        @Override
         public void run() {
             try {
                 while (true) {

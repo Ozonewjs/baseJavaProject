@@ -39,7 +39,8 @@ public class TestVolatile {
             }.start();
         }
 //        System.out.println(Thread.activeCount());
-        while(Thread.activeCount()>2)  //保证前面的线程都执行完
+        //保证前面的线程都执行完
+        while(Thread.activeCount()>2)
             Thread.yield();
             System.out.println(test.inc);
     }
