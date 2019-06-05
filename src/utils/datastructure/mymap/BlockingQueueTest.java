@@ -1,4 +1,4 @@
-package utils.mymap;
+package utils.datastructure.mymap;
 
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.ExecutorService;
@@ -8,11 +8,11 @@ import java.util.concurrent.LinkedBlockingQueue;
  /**
  * @ClassName Test1
  * @Author Ozone
- * @Description 多线程模拟实现生产者／消费者模型
+ * @Description 多线程模拟实现生产者／消费者模型（使用阻塞队列（BlockingQueue）控制线程通信）
  * @Date 2019/5/29 16:03
  * @Version 1.0
  **/
-public class BlockingQueueTest2 {
+public class BlockingQueueTest {
     /**
      *
      * 定义装苹果的篮子
@@ -88,7 +88,7 @@ public class BlockingQueueTest2 {
     }
 
     public static void main(String[] args) {
-        BlockingQueueTest2 test = new BlockingQueueTest2();
+        BlockingQueueTest test = new BlockingQueueTest();
 
         // 建立一个装苹果的篮子
         Basket basket = test.new Basket();

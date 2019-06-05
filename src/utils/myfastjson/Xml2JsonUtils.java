@@ -50,18 +50,21 @@ public class Xml2JsonUtils {
             }
         }
         List<Element> chdEl = element.elements();
-        if (chdEl.isEmpty() && !isEmpty(element.getText())) {// 如果没有子元素,只有一个值
+        // 如果没有子元素,只有一个值
+        if (chdEl.isEmpty() && !isEmpty(element.getText())) {
             json.put(element.getName(), element.getText());
         }
-
-        for (Element e : chdEl) {// 有子元素
-            if (!e.elements().isEmpty()) {// 子元素也有子元素
+        // 有子元素
+        for (Element e : chdEl) {
+            // 子元素也有子元素
+            if (!e.elements().isEmpty()) {
                 JSONObject chdjson = new JSONObject();
                 dom4j2Json(e, chdjson);
                 Object o = json.get(e.getName());
                 if (o != null) {
                     JSONArray jsona = null;
-                    if (o instanceof JSONObject) {// 如果此元素已存在,则转为jsonArray
+                    // 如果此元素已存在,则转为jsonArray
+                    if (o instanceof JSONObject) {
                         JSONObject jsono = (JSONObject) o;
                         json.remove(e.getName());
                         jsona = new JSONArray();
