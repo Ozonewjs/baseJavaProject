@@ -3,7 +3,7 @@ package utils.threadtest.threadcommunication;
 /**
  * @ClassName ThreadB
  * @Author Ozone
- * @Description TODO
+ * @Description 消费面包的方法
  * @Date 2019/6/5 13:49
  * @Version 1.0
  **/

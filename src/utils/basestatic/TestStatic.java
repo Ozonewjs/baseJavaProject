@@ -1,4 +1,4 @@
-package utils.baseStatic;
+package utils.basestatic;
 
 public class TestStatic {
     static int a;
@@ -18,9 +18,9 @@ public class TestStatic {
         return c;
     }
     TestStatic(int a,int b,int c){
-        this.a = a;
+        TestStatic.a = a;
         this.b = b;
-        this.c= c;
+        TestStatic.c= c;
     }
     public static void main(String[] args) {
         TestStatic t = new TestStatic(1,1,1);
@@ -28,7 +28,7 @@ public class TestStatic {
         System.out.println(t.aMethod());
         t.bMethod();
         System.out.println(t.bMethod());
-        t.cMethod();
-        System.out.println(t.cMethod());
+        TestStatic.cMethod();
+        System.out.println(TestStatic.cMethod());
     }
 }

@@ -67,6 +67,7 @@ public class Test1 {
                         try {
                             LOCK.wait();   //----分析 2
                         } catch (Exception e) {
+                            e.printStackTrace();
                         }
                     }
                     count--; //商品被消耗，商品减一
@@ -75,6 +76,5 @@ public class Test1 {
                 }
             }
         }
-
     }
 }
