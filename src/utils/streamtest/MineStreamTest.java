@@ -2,6 +2,7 @@ package utils.streamtest;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.IntSummaryStatistics;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -62,25 +63,32 @@ public class MineStreamTest {
         String[] arrflat3 = {"h", "j", "c", "d"};
         // Stream.of(arr1, arr2, arr3).flatMap(x -> Arrays.stream(x)).forEach(System.out::println);
         // flapMap：拆解流，将流中每一个元素拆解成一个流
-        Stream.of(arrflat1, arrflat2, arrflat3).flatMap(Arrays::stream).forEach(System.out::println);
-        String a = "A";
-        String aa = "A";
-        String b = new String("B");
-        String bb = new String("B");
-        if(a == aa){
-            System.out.println("a==aa");
-        }else{
-            System.out.println("a!=aa");
-        }
-        if(b == bb){
-            System.out.println("b == bb");
-        }else{
-            System.out.println("b!=bb");
-        }
-        if(b.equals(bb)){
-            System.out.println("b.equlas(bb); ");
-        }else{
-            System.out.println("!b.equlas(bb)");
-        }
+        Stream.of(arrflat1, arrflat2, arrflat3)
+                .flatMap(Arrays::stream)
+                .forEach(System.out::println);
+
+        Stream<Integer> trans = Stream.of(11, 9, 2, 13, 1, 2, 99, 54, 23, 66, 70, 23, 46, 50, 100, 10, 24, 18, 19, 2);
+        /**
+         * @Author Ozone
+         * @Description //假设有N条营业数据，前5条是无关的测试数据，
+         * 中间10条是要参加考核的，参与考核的需要知道其中超过50w（包括50）的数据的交易额平均值，其他不参与考核的忽略。
+         * 测试数据如下：
+         * @Date 2019/6/28 16:09
+         * @Param [args]
+         * @return void
+         **/
+        IntSummaryStatistics all = trans
+                // 前5条跳过，2, 99, 54, 23, 66, 70, 23, 46, 50, 100, 10, 24, 18, 19, 2
+                .skip(5)
+                // 取10条考核交易 2, 99, 54, 23, 66, 70, 23, 46, 50, 100
+                .limit(10)
+                // 将50以下的交易剔除 99, 54, 66, 70, 50, 100
+                .filter(i -> i >= 50)
+                // 转换成数字。如果是IntStream 则不需要转换
+                .mapToInt(i->i)
+                // 将流的统计结果放入包装对象中
+                .summaryStatistics();
+                // 交易总量 439w，平均值为439/6
+        System.out.println(all.getAverage());
     }
 }

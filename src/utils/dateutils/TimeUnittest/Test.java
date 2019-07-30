@@ -1,4 +1,4 @@
-package utils.datautils.TimeUnittest;
+package utils.dateutils.TimeUnittest;
 
 import java.util.concurrent.TimeUnit;
 

@@ -1,8 +1,14 @@
 package utils.linkedlist;
 
 public class SingleLinkedList {
-        private int size;//链表节点的个数
-        private Node head;//头节点
+        /**
+         *链表节点的个数
+         **/
+        private int size;
+        /**
+         *头节点
+         **/
+        private Node head;
 
         public SingleLinkedList(){
             size = 0;
