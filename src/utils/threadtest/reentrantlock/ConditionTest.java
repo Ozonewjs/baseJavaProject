@@ -11,8 +11,8 @@ import java.util.concurrent.locks.ReentrantLock;
  * @Version 1.0
  **/
 public class ConditionTest {
-    static ReentrantLock lock = new ReentrantLock();
-    static Condition condition = lock.newCondition();
+    private static ReentrantLock lock = new ReentrantLock();
+    private static Condition condition = lock.newCondition();
     public static void main(String[] args) throws InterruptedException {
 
         lock.lock();

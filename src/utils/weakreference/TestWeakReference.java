@@ -1,30 +1,23 @@
 package utils.weakreference;
 
-import java.lang.ref.WeakReference;
+import utils.Apple;
 
 public class TestWeakReference {
     public static void main(String[] args) {
-
-        Car car = new Car(22000,"silver");
-        WeakReference<Car> weakCar = new WeakReference<>(car);
-//        int i=0;
-//        while(true){
-////            System.out.println("this is strong reference "+i+" loops - "+car);
-//            if(weakCar.get()!=null){
-//                i++;
-//                System.out.println("Object is alive for "+i+" loops - "+weakCar);
-//            }else{
-//                System.out.println("Object has been collected.");
-//                break;
-//            }
-//        }
-        String b="abc";
-
-        String a=new String("abc");
-        System.out.println((a==b)? "true":"false");
-        if(a.equals(b)){
-            System.out.println("a等于b");
+        Audi salad = new Audi(new Car(2000,"blue"));
+        //通过WeakReference的get()方法获取Apple
+        System.out.println("Car:" + salad.get());
+        System.gc();
+        try {
+            //休眠一下，在运行的时候加上虚拟机参数-XX:+PrintGCDetails，输出gc信息，确定gc发生了。
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
         }
-        System.out.println(a.compareTo(b));
+
+        //如果为空，代表被回收了
+        if (salad.get() == null) {
+            System.out.println("clear Car.");
+        }
     }
 }

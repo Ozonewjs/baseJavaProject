@@ -28,5 +28,7 @@ public class Main {
         singleList.display();
         //查找B
         System.out.println(singleList.find("B"));
+        String aa = null;
+        System.out.println("sss"+aa);
     }
 }

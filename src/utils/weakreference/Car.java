@@ -26,6 +26,11 @@ public class Car {
     }
 
     @Override
+    protected void finalize() throws Throwable {
+        super.finalize();
+        System.out.println("Car： " + price + " finalize。");
+    }
+    @Override
     public String toString() {
         return "Car{" +
                 "price=" + price +

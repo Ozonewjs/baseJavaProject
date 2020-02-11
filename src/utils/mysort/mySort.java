@@ -31,8 +31,11 @@ public class mySort {
         for (int i = 0; i < array.length; i++) {
             int minIndex = i;
             for (int j = i; j < array.length; j++) {
-                if (array[j] < array[minIndex]) //找到最小的数
-                    minIndex = j; //将最小数的索引保存
+                //找到最小的数
+                if (array[j] < array[minIndex]){
+                    //将最小数的索引保存
+                    minIndex = j;
+                     }
             }
             int temp = array[minIndex];
             array[minIndex] = array[i];
@@ -106,14 +109,18 @@ public class mySort {
     public static int[] merge(int[] left, int[] right) {
         int[] result = new int[left.length + right.length];
         for (int index = 0, i = 0, j = 0; index < result.length; index++) {
-            if (i >= left.length)
+            if (i >= left.length){
                 result[index] = right[j++];
-            else if (j >= right.length)
+            }
+            else if (j >= right.length){
                 result[index] = left[i++];
-            else if (left[i] > right[j])
+            }
+            else if (left[i] > right[j]){
                 result[index] = right[j++];
-            else
+            }
+            else{
                 result[index] = left[i++];
+            }
         }
         return result;
     }
